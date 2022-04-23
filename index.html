@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Calculator</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+
+	<style type="text/css">
+		html{
+			height: 100%;
+		}
+
+		#container{
+			display: flex;
+  			justify-content: center;
+  			flex-direction: column;
+  			align-items: center;
+  			height: 500px;
+  			font-family: 'Indie Flower', cursive;
+
+  			background-color: #85FFBD;
+			background-image: linear-gradient(204deg, #85FFBD 0%, #FFFB7D 100%);
+			background-repeat: no-repeat;
+		}
+
+		#firstNum{
+			position: relative;
+			left: 16.5px;
+		}
+		#secondNum{
+			position: relative;
+			left: 7.5px;
+		}
+
+		.num{
+			margin: 5px;
+		}
+		div:nth-of-type(2) label{
+			position: relative;
+			left: 7px;
+		}
+		button,input{
+			padding: 5px;
+			border-radius: 4px;
+		}
+		#btn{
+			background-color: white;
+			width: 140%;
+			position: relative;
+			right: 25px;
+		}
+	</style>
+
+</head>
+<body id="container">
+
+	<h1>Simply perform + , - , * or / on two numbers</h1>
+		
+		<div>
+		<label for="firstNum">First Number</label>
+		<input type="numeric" name="" id="firstNum" class="num">
+		</div>
+
+		<div>
+		<label for="secondNum">Second Number</label>
+		<input type="numeric" name="" id="secondNum" class="num">
+		</div>
+
+		<div><button id="btn" class="num">Calculate</button></div>
+		<div><h2></h2></div>
+</body>
+<script type="text/javascript">
+	
+	btn.addEventListener("click", calculate)
+
+		function calculate(){
+			let firstNumber = document.querySelectorAll("input")[0].value;
+			let secondNumber = document.querySelectorAll("input")[1].value;
+			let res = document.querySelector("h2");
+
+			firstNumber = Number(firstNumber);
+			secondNumber = Number(secondNumber);
+			let btn = document.getElementById("btn");
+
+			let operation = prompt("Which operation to perform?(Choices: + , - , * , /)")
+
+			if(operation === "+"){
+			        //p.innerHTML = (`Addition: ${firstNumber + secondNumber}`);
+			        res.innerHTML = `${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`;
+
+			    }else if(operation === "-"){
+			        res.innerHTML = `${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`;
+			    }else if(operation === "*"){
+			        res.innerHTML = `${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`;
+			    }else if(operation === "/"){
+			        res.innerHTML = `${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`;
+			    }else{
+			        res.innerHTML = "Wrong Input. Try again"
+			    }    
+			}
+
+</script>
+</html>
